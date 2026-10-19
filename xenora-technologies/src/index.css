@@ -1,0 +1,136 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+    font-family: "DM Sans", sans-serif;
+    color: #f5f7ff;
+    background: #080b14;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    --bg: #080b14;
+    --surface: #101626;
+    --border: #242d42;
+    --muted: #a4aec3;
+    --blue: #6d8bff;
+    --violet: #a78bfa;
+    --white: #f5f7ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+::selection {
+    background: #6d8bff;
+    color: white;
+}
+
+.section {
+    padding: 100px 7%;
+}
+
+.section-heading {
+    max-width: 680px;
+    margin-bottom: 48px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: #9aafff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-heading h2,
+.section-title {
+    margin: 16px 0;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.12;
+    letter-spacing: -1.8px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    min-height: 48px;
+    padding: 13px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.primary-button {
+    background: #6d8bff;
+    color: #080b14;
+}
+
+.primary-button:hover {
+    background: #9aafff;
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    border-color: var(--border);
+    background: #101626;
+    color: var(--white);
+}
+
+.secondary-button:hover {
+    border-color: var(--blue);
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 75px 6%;
+    }
+}
