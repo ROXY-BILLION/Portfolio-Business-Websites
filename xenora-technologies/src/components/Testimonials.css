@@ -1,0 +1,114 @@
+
+.testimonials {
+    background: var(--bg);
+}
+
+.testimonial {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: linear-gradient(140deg, #111a30, #0c1120);
+}
+
+.testimonial__mark {
+    color: #8fa5ff;
+    font-family: Georgia, serif;
+    font-size: 80px;
+    line-height: 0.7;
+}
+
+.testimonial__quote {
+    max-width: 800px;
+    min-height: 100px;
+    margin: 20px 0 35px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(22px, 3vw, 34px);
+    line-height: 1.5;
+    letter-spacing: -0.6px;
+}
+
+.testimonial__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
+}
+
+.testimonial__person {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.testimonial__avatar {
+    display: grid;
+    width: 45px;
+    height: 45px;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6d8bff, #a78bfa);
+    color: #080b14;
+    font-weight: 700;
+}
+
+.testimonial__person strong,
+.testimonial__person span {
+    display: block;
+}
+
+.testimonial__person strong {
+    font-size: 13px;
+}
+
+.testimonial__person span {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.testimonial__controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.testimonial__controls > span {
+    margin-right: 8px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.testimonial__controls button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #34405c;
+    border-radius: 50%;
+    background: #151f37;
+    color: white;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.testimonial__controls button:hover {
+    border-color: #8fa5ff;
+    background: #28365e;
+}
+
+@media (max-width: 600px) {
+    .testimonial {
+        padding: 25px;
+    }
+
+    .testimonial__bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .testimonial__quote {
+        min-height: auto;
+    }
+}

@@ -1,0 +1,318 @@
+
+.hero {
+    position: relative;
+    min-height: 690px;
+    padding: 105px 7% 100px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 35px;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(ellipse at 78% 45%, rgba(67, 76, 160, 0.14), transparent 42%),
+        linear-gradient(180deg, #080b14, #0a0e1b);
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 13px;
+    border: 1px solid #293453;
+    border-radius: 50px;
+    background: rgba(16, 22, 38, 0.8);
+    color: #bdcaff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.hero__status-dot,
+.hero__live-dot {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #8ea5ff;
+    box-shadow: 0 0 12px #6d8bff;
+}
+
+.hero h1 {
+    margin: 28px 0 22px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(52px, 6.3vw, 86px);
+    line-height: 0.99;
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: #91a7ff;
+    background: linear-gradient(100deg, #91a7ff, #bca3ff 70%, #7dd3fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero__description {
+    max-width: 550px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.hero__trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 42px;
+    color: #818ba3;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.hero__trust span + span {
+    padding-left: 18px;
+    border-left: 1px solid #394057;
+}
+
+.hero__visual {
+    position: relative;
+    display: grid;
+    min-height: 440px;
+    place-items: center;
+}
+
+.hero__glow {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(70px);
+    pointer-events: none;
+}
+
+.hero__glow--one {
+    top: 15%;
+    right: 15%;
+    width: 280px;
+    height: 280px;
+    background: rgba(87, 102, 255, 0.18);
+}
+
+.hero__glow--two {
+    bottom: 5%;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: rgba(167, 139, 250, 0.13);
+}
+
+.hero__orbit {
+    position: absolute;
+    border: 1px solid rgba(142, 165, 255, 0.28);
+    border-radius: 50%;
+    transform: rotate(-28deg);
+}
+
+.hero__orbit--outer {
+    width: 360px;
+    height: 245px;
+    animation: orbit-spin 22s linear infinite;
+}
+
+.hero__orbit--inner {
+    width: 260px;
+    height: 360px;
+    border-color: rgba(167, 139, 250, 0.28);
+    transform: rotate(45deg);
+    animation: orbit-spin 28s linear infinite reverse;
+}
+
+.hero__core {
+    display: flex;
+    width: 175px;
+    height: 175px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid rgba(178, 193, 255, 0.45);
+    border-radius: 42px;
+    background: linear-gradient(145deg, #283968, #121a34 70%);
+    box-shadow: 0 0 70px rgba(109, 139, 255, 0.24), inset 0 0 30px rgba(167, 139, 250, 0.15);
+    transform: rotate(-8deg);
+    animation: core-float 5s ease-in-out infinite;
+}
+
+.hero__core span {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 83px;
+    font-weight: 700;
+    line-height: 1;
+    background: linear-gradient(135deg, white, #9aafff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero__core small {
+    color: #c1ccff;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.hero__floating-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid #34405d;
+    border-radius: 12px;
+    background: rgba(14, 21, 39, 0.92);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.3);
+    animation: core-float 5s ease-in-out infinite;
+}
+
+.hero__floating-card--top {
+    top: 42px;
+    right: -5px;
+}
+
+.hero__floating-card--bottom {
+    bottom: 45px;
+    left: 0;
+    animation-delay: -2s;
+}
+
+.hero__card-icon {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 10px;
+    background: #252f54;
+    color: #b5c4ff;
+    font-size: 23px;
+}
+
+.hero__floating-card strong,
+.hero__floating-card small {
+    display: block;
+}
+
+.hero__floating-card strong {
+    font-size: 11px;
+}
+
+.hero__floating-card small {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.hero__scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 7%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #818ba3;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.hero__scroll span {
+    color: #9aafff;
+    font-size: 17px;
+}
+
+@keyframes orbit-spin {
+    to {
+        rotate: 360deg;
+    }
+}
+
+@keyframes core-float {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -12px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 85px;
+    }
+
+    .hero__visual {
+        min-height: 400px;
+    }
+
+    .hero__scroll {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero {
+        padding: 70px 6% 50px;
+    }
+
+    .hero h1 {
+        font-size: clamp(47px, 13vw, 65px);
+        letter-spacing: -3px;
+    }
+
+    .hero__description {
+        font-size: 14px;
+    }
+
+    .hero__visual {
+        min-height: 350px;
+        transform: scale(0.9);
+    }
+
+    .hero__floating-card--top {
+        right: -10px;
+    }
+
+    .hero__floating-card--bottom {
+        left: -10px;
+    }
+
+    .hero__trust {
+        gap: 10px;
+    }
+
+    .hero__trust span + span {
+        padding-left: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__orbit,
+    .hero__core,
+    .hero__floating-card {
+        animation: none;
+    }
+}

@@ -1,0 +1,123 @@
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    min-height: 82px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    border-bottom: 1px solid rgba(164, 174, 195, 0.12);
+    background: rgba(8, 11, 20, 0.88);
+    backdrop-filter: blur(18px);
+}
+
+.navbar__brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar__logo {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6d8bff, #a78bfa);
+    color: #080b14;
+    font-size: 25px;
+}
+
+.navbar__brand small {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar__menu > a:not(.navbar__cta) {
+    color: var(--muted);
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+.navbar__menu > a:not(.navbar__cta):hover {
+    color: white;
+}
+
+.navbar__cta {
+    padding: 12px 17px;
+    border: 1px solid #394568;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.navbar__cta:hover {
+    border-color: var(--blue);
+    background: #151e36;
+}
+
+.navbar__cta span {
+    margin-left: 8px;
+}
+
+.navbar__toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+}
+
+@media (max-width: 850px) {
+    .navbar {
+        min-height: 72px;
+        padding: 0 6%;
+    }
+
+    .navbar__toggle {
+        display: block;
+    }
+
+    .navbar__menu {
+        position: absolute;
+        top: 71px;
+        left: 0;
+        right: 0;
+        display: none;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+        padding: 15px 6% 25px;
+        border-bottom: 1px solid var(--border);
+        background: #0b1020;
+    }
+
+    .navbar__menu--open {
+        display: flex;
+    }
+
+    .navbar__menu > a {
+        padding: 15px 0;
+    }
+
+    .navbar__cta {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
