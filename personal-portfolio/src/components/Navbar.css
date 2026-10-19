@@ -1,0 +1,79 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 8%;
+    border-bottom: 1px solid var(--border);
+    background: rgb(11 17 32 / 94%);
+    backdrop-filter: blur(14px);
+}
+
+.navbar__logo,
+.footer__logo {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.navbar__logo span,
+.footer__logo span {
+    color: var(--accent);
+}
+
+.navbar__links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar__links a {
+    color: var(--muted);
+    transition: color 0.2s ease;
+}
+
+.navbar__links a:hover {
+    color: var(--accent);
+}
+
+.navbar__toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    font-size: 1.6rem;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 18px 6%;
+    }
+
+    .navbar__toggle {
+        display: block;
+    }
+
+    .navbar__links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 6% 20px;
+        border-bottom: 1px solid var(--border);
+        background: var(--background);
+    }
+
+    .navbar__links--open {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar__links a {
+        padding: 14px 0;
+    }
+}

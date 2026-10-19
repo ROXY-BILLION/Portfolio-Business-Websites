@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+    font-family: "DM Sans", sans-serif;
+    color: #f1f5f9;
+    background: #0b1120;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+
+    --background: #0b1120;
+    --surface: #111b2e;
+    --border: #24334a;
+    --text: #f1f5f9;
+    --muted: #9ba9bd;
+    --accent: #38bdf8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+button,
+a {
+    font: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+::selection {
+    color: var(--background);
+    background: var(--accent);
+}
+
+.section {
+    width: min(1100px, 84%);
+    margin-inline: auto;
+    padding-block: 90px;
+    scroll-margin-top: 85px;
+}
+
+.eyebrow {
+    margin-bottom: 14px;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+h2 {
+    margin-bottom: 32px;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 13px 22px;
+    border: 1px solid var(--accent);
+    border-radius: 7px;
+    font-weight: 700;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button--primary {
+    color: #06111e;
+    background: var(--accent);
+}
+
+.button--primary:hover {
+    background: #7dd3fc;
+}
+
+.button--outline {
+    color: var(--text);
+}
+
+.button--outline:hover {
+    background: var(--surface);
+}
+
+@media (max-width: 600px) {
+    .section {
+        width: 88%;
+        padding-block: 65px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

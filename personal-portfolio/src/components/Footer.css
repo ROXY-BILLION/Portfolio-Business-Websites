@@ -1,0 +1,29 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px 8%;
+    border-top: 1px solid var(--border);
+}
+
+.footer__logo {
+    color: var(--text);
+}
+
+.footer p,
+.footer__top {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.footer__top:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}

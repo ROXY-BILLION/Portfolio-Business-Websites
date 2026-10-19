@@ -1,0 +1,26 @@
+.contact__panel {
+    padding: clamp(30px, 6vw, 75px);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at 90% 10%, #38bdf81a, transparent 40%),
+        var(--surface);
+    text-align: center;
+}
+
+.contact__panel h2 {
+    max-width: 700px;
+    margin-inline: auto;
+    line-height: 1.2;
+}
+
+.contact__panel h2 span {
+    color: var(--accent);
+}
+
+.contact__panel > p:not(.eyebrow) {
+    max-width: 540px;
+    margin: 0 auto 30px;
+    color: var(--muted);
+    line-height: 1.9;
+}
