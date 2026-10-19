@@ -1,0 +1,133 @@
+.hero {
+    padding: 85px 0;
+    background: #11110f;
+    color: #f5f5f2;
+}
+
+.hero__container {
+    width: min(1160px, calc(100% - 48px));
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.hero__eyebrow {
+    color: #d9ff65;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 25px 0;
+    font-size: clamp(3rem, 6vw, 5.7rem);
+    line-height: 1;
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: #d9ff65;
+}
+
+.hero__description {
+    max-width: 460px;
+    color: #aaa99f;
+    line-height: 1.8;
+}
+
+.hero__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.hero__button {
+    padding: 15px 20px;
+    background: #d9ff65;
+    color: #171811;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.hero__button:hover {
+    transform: translateY(-3px);
+}
+
+.hero__link {
+    color: #f5f5f2;
+}
+
+.hero__link:hover {
+    color: #d9ff65;
+}
+
+.hero__note {
+    margin-top: 55px;
+    color: #aaa99f;
+    font-size: 0.8rem;
+}
+
+.hero__visual {
+    position: relative;
+    min-height: 480px;
+    overflow: hidden;
+    border-radius: 48% 48% 4px 4px;
+    background: #292a20;
+}
+
+.hero__visual img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+.hero__image-label {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-shadow: 0 2px 8px #000;
+}
+
+@media (max-width: 800px) {
+    .hero__container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero__visual,
+    .hero__visual img {
+        height: 400px;
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero {
+        padding: 55px 0;
+    }
+
+    .hero__container {
+        width: calc(100% - 32px);
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+        letter-spacing: -2px;
+    }
+
+    .hero__visual,
+    .hero__visual img {
+        height: 320px;
+        min-height: 320px;
+    }
+}

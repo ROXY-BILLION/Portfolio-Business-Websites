@@ -1,0 +1,140 @@
+
+.footer {
+    padding: 65px 8% 25px;
+    background: #191916;
+    color: #f5f5f2;
+}
+
+.footer__main {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr auto;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 55px;
+}
+
+.footer__brand {
+    color: #f5f5f2;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.footer__brand span {
+    color: #d9ff65;
+}
+
+.footer__main > p {
+    max-width: 360px;
+    margin: 0;
+    color: #aaa99f;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 18px;
+    border: 1px solid #383831;
+    border-radius: 8px;
+    color: #f5f5f2;
+    font-size: 13px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.footer__cta:hover {
+    background: #d9ff65;
+    color: #11110f;
+}
+
+.footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #383831;
+}
+
+.footer__bottom > p {
+    margin: 0;
+    color: #aaa99f;
+    font-size: 12px;
+}
+
+.footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.footer__links a {
+    color: #aaa99f;
+    font-size: 12px;
+    transition: color 0.2s;
+}
+
+.footer__links a:hover {
+    color: #d9ff65;
+}
+
+.footer__back-to-top {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border: 1px solid #383831;
+    border-radius: 50%;
+    color: #f5f5f2;
+    font-size: 20px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.footer__back-to-top:hover {
+    background: #d9ff65;
+    color: #11110f;
+}
+
+@media (max-width: 850px) {
+    .footer__main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer__main > p {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .footer__bottom {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 520px) {
+    .footer {
+        padding: 50px 6% 25px;
+    }
+
+    .footer__main {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding-bottom: 35px;
+    }
+
+    .footer__main > p {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+    }
+
+    .footer__links {
+        gap: 18px;
+    }
+}
