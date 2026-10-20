@@ -1,0 +1,10 @@
+
+.section-heading {
+  min-width: 0;
+}
+
+@media (max-width: 720px) {
+  .section-heading h2 {
+    letter-spacing: -1.5px;
+  }
+}
