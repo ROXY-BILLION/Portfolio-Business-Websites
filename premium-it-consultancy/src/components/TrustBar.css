@@ -1,0 +1,139 @@
+.trust-bar {
+  position: relative;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: #091626;
+}
+
+.trust-bar__container {
+  width: min(1320px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.trust-bar__intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 27px;
+}
+
+.trust-bar__intro > span {
+  color: #56e0e8;
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+}
+
+.trust-bar__intro p {
+  margin: 0;
+  color: #8498b0;
+  font-size: 0.79rem;
+}
+
+.trust-bar__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+}
+
+.trust-bar__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+  padding: 8px 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.trust-bar__item:first-child {
+  padding-left: 0;
+}
+
+.trust-bar__item:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+.trust-bar__number {
+  flex-shrink: 0;
+  padding-top: 2px;
+  color: #56e0e8;
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+}
+
+.trust-bar__content h3 {
+  margin: 0;
+  color: #e7effb;
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.trust-bar__content p {
+  margin: 7px 0 0;
+  color: #8295ac;
+  font-size: 0.69rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 1000px) {
+  .trust-bar__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 24px;
+  }
+
+  .trust-bar__item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .trust-bar__item:nth-child(3) {
+    padding-left: 0;
+  }
+
+  .trust-bar__item:nth-child(4) {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .trust-bar {
+    padding: 28px 0;
+  }
+
+  .trust-bar__container {
+    width: calc(100% - 32px);
+  }
+
+  .trust-bar__intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .trust-bar__intro p {
+    font-size: 0.76rem;
+    line-height: 1.7;
+  }
+
+  .trust-bar__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .trust-bar__item,
+  .trust-bar__item:first-child,
+  .trust-bar__item:nth-child(3),
+  .trust-bar__item:last-child {
+    padding: 17px 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .trust-bar__item:last-child {
+    border-bottom: 0;
+  }
+}

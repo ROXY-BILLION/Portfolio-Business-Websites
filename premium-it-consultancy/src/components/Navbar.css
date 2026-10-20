@@ -1,0 +1,239 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(7, 17, 31, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.navbar__container {
+  width: min(1320px, calc(100% - 48px));
+  min-height: 86px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar__logo {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: #07111f;
+  font-size: 1.55rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #56e0e8, #4da3ff);
+  box-shadow: 0 0 25px rgba(77, 163, 255, 0.2);
+}
+
+.navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.navbar__brand-text strong {
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+}
+
+.navbar__brand-text small {
+  color: #8b9bb1;
+  font-size: 0.61rem;
+  letter-spacing: 0.22em;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar__link {
+  position: relative;
+  color: #aab8ca;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.navbar__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  border-radius: 5px;
+  background: #56e0e8;
+  transition: width 0.25s ease;
+}
+
+.navbar__link:hover {
+  color: #ffffff;
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 17px;
+  border: 1px solid rgba(86, 224, 232, 0.35);
+  border-radius: 9px;
+  color: #ffffff;
+  background: rgba(77, 163, 255, 0.09);
+  font-size: 0.87rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.navbar__cta span {
+  color: #56e0e8;
+  font-size: 1.1rem;
+}
+
+.navbar__cta:hover {
+  transform: translateY(-2px);
+  border-color: #56e0e8;
+  background: rgba(77, 163, 255, 0.18);
+}
+
+.navbar__toggle {
+  display: none;
+  width: 43px;
+  height: 43px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+}
+
+.navbar__toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background: #ffffff;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.navbar__toggle.is-active span:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__toggle.is-active span:last-child {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.navbar__link:focus-visible,
+.navbar__cta:focus-visible,
+.navbar__brand:focus-visible,
+.navbar__toggle:focus-visible {
+  outline: 2px solid #56e0e8;
+  outline-offset: 5px;
+}
+
+@media (max-width: 900px) {
+  .navbar__container {
+    min-height: 76px;
+  }
+
+  .navbar__toggle {
+    display: block;
+  }
+
+  .navbar__menu {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 24px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    background: rgba(7, 17, 31, 0.98);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .navbar__menu--open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .navbar__link {
+    padding: 16px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .navbar__link::after {
+    display: none;
+  }
+
+  .navbar__cta {
+    justify-content: center;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__container {
+    width: calc(100% - 32px);
+  }
+
+  .navbar__logo {
+    width: 39px;
+    height: 39px;
+  }
+
+  .navbar__brand-text strong {
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar *,
+  .navbar *::before,
+  .navbar *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
